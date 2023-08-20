@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { faker } from "@faker-js/faker";
+// import { faker } from "@faker-js/faker";
 import {
   Box,
   IconButton,
@@ -15,7 +15,7 @@ import {
 import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
 import { ChatList } from "../../data";
 import { SimpleBarStyle } from "../../components/Scrollbar";
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
