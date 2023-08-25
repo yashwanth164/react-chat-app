@@ -5,9 +5,7 @@ import {
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-
-
-
+import Message from "./Message";
 
 
 const Conversation = () => {
@@ -16,7 +14,9 @@ const Conversation = () => {
       {/* chat header */}
       <Header/>
       {/* msg */}
-      <Box width={"100%"} sx={{ flexGrow: 1 }}></Box>
+      <Box width={"100%"} sx={{ flexGrow: 1, height:"100%", overflowY:"scroll" }}>
+        <Message/>
+      </Box>
       {/* chat footer */}
       <Footer/>
       
