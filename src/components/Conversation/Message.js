@@ -4,7 +4,7 @@ import React from 'react';
 import {DocMsg, LinkMsg, MediaMsg, ReplyMsg, TextMsg, Timeline} from "./MsgTypes";
 import {Chat_History} from "../../data";
 
-const Message = () => {
+const Message = ({menu}) => {
     const theme=useTheme();
   return (
     <Box p={3} sx={{backgroundColor: theme.palette.background.neutral}}>
@@ -16,15 +16,15 @@ const Message = () => {
                     case "msg":
                         switch(el.subtype){
                             case "img":
-                                return <MediaMsg el={el} />;
+                                return <MediaMsg el={el} menu={menu} />;
                             case "doc":
-                                return <DocMsg el={el} />;
+                                return <DocMsg el={el} menu={menu} />;
                             case "link":
-                                return <LinkMsg el={el} />;
+                                return <LinkMsg el={el} menu={menu} />;
                             case "reply":
-                                return <ReplyMsg el={el}/>;
+                                return <ReplyMsg el={el} menu={menu} />;
                             default:
-                                return <TextMsg el={el}/>;
+                                return <TextMsg el={el} menu={menu} />;
                         }
                     default:
                         break;
