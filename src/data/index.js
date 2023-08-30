@@ -129,6 +129,115 @@ const ChatList = [
   },
 ];
 
+const MembersList = [
+  {
+    id: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online:true,
+  },
+  {
+    id: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online:true,
+
+  },
+  {
+    id: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online:false,
+
+  },
+  {
+    id: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online:false,
+
+  },
+  {
+    id: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online:false,
+
+  },
+  {
+    id: 5,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online:true,
+
+  },
+  {
+    id: 6,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online:true,
+
+  },
+  {
+    id: 7,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online:false,
+
+  },
+];
+
+const CallLogs = [
+  {
+    id: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+    online: true,
+  },
+  {
+    id: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: true,
+    online: true,
+  },
+  {
+    id: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: false,
+    online: false,
+  },
+  {
+    id: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: false,
+    online: false,
+  },
+  {
+    id: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: true,
+    online: true,
+  },
+  {
+    id: 5,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+    online: false,
+  },
+];
+
 const Chat_History = [
   {
     type: "msg",
@@ -220,7 +329,7 @@ const Message_options = [
   },
 ];
 
-const SHARED_LINKS=[
+const SHARED_LINKS = [
   {
     type: "msg",
     subtype: "link",
@@ -255,7 +364,7 @@ const SHARED_LINKS=[
   },
 ];
 
-const SHARED_DOCS=[
+const SHARED_DOCS = [
   {
     type: "msg",
     subtype: "doc",
@@ -291,8 +400,10 @@ export {
   Nav_Setting,
   Nav_Buttons,
   ChatList,
+  CallLogs,
+  MembersList,
   Chat_History,
   Message_options,
   SHARED_DOCS,
-  SHARED_LINKS
+  SHARED_LINKS,
 };

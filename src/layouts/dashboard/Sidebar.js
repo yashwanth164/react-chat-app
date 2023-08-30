@@ -6,10 +6,41 @@ import { Nav_Buttons, Profile_Menu } from "../../data";
 import useSettings from "../../hooks/useSettings";
 import { faker } from "@faker-js/faker";
 import AntSwitch from "../../components/AntSwitch";
-import logo from "../../assets/Images/logo.ico";
+import logo from "../../assets/Images/kuku.png";
+import { useNavigate } from "react-router-dom";
+
+const getPath = (index) => {
+  switch (index) {
+    case 0:
+      return "/app";
+    case 1:
+      return "/group";
+    case 2:
+      return "/call";
+    case 3:
+      return "/settings";
+    default:
+      break;
+  }
+};
+
+const getMenuPath = (index) => {
+  switch (index) {
+    case 0:
+      return "/profile";
+    case 1:
+      return "/settings";
+    case 2:
+      // Update the redux tokens & set isAuth to false
+      return "/auth/login";
+    default:
+      break;
+  }
+};
 
 const Sidebar = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const [selected, setSelected] = useState(0);
   const { onToggleMode } = useSettings();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -74,7 +105,10 @@ const Sidebar = () => {
                 </Box>
               ) : (
                 <IconButton
-                  onClick={() => setSelected(ele.index)}
+                  onClick={() => {
+                    setSelected(ele.index);
+                    navigate(getPath(ele.index));
+                  }}
                   sx={{
                     width: "max-content",
                     color:
@@ -110,7 +144,10 @@ const Sidebar = () => {
               </Box>
             ) : (
               <IconButton
-                onClick={() => setSelected(3)}
+                onClick={() => {
+                  setSelected(3);
+                  navigate(getPath(3));
+                }}
                 sx={{
                   width: "max-content",
                   color:
@@ -154,20 +191,30 @@ const Sidebar = () => {
               "aria-labelledby": "basic-button",
             }}
             anchorOrigin={{
-              vertical:"bottom",
-              horizontal:"right",
+              vertical: "bottom",
+              horizontal: "right",
             }}
             transformOrigin={{
-              vertical:"bottom",
-              horizontal:"left",
+              vertical: "bottom",
+              horizontal: "left",
             }}
           >
             <Stack spacing={1} px={1}>
-              {Profile_Menu.map((el) => (
-                <MenuItem onClick={() => {}}>
-                  <Stack sx={{width:100}} direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
-                  <span>{el.title}</span>
-                  {el.icon}
+              {Profile_Menu.map((el, idx) => (
+                <MenuItem
+                  onClick={() => {
+                    handleClick();
+                  }}
+                >
+                  <Stack
+                    onClick={() => navigate(getMenuPath(idx))}
+                    sx={{ width: 100 }}
+                    direction={"row"}
+                    alignItems={"center"}
+                    justifyContent={"space-between"}
+                  >
+                    <span>{el.title}</span>
+                    {el.icon}
                   </Stack>
                 </MenuItem>
               ))}

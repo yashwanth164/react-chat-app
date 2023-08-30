@@ -1,5 +1,5 @@
 import React from "react";
-import FormProvider from "../../../components/hook-form/FormProvider";
+import FormProvider from "../../components/hook-form/FormProvider";
 import { useState } from "react";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
@@ -12,7 +12,7 @@ import {
   Link,
   Button,
 } from "@mui/material";
-import { RHFTextField } from "../../../components/hook-form";
+import { RHFTextField } from "../../components/hook-form";
 import { Eye, EyeSlash } from "phosphor-react";
 import { Link as RouterLink } from "react-router-dom";
 

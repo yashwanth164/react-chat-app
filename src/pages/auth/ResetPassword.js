@@ -2,7 +2,7 @@ import { Link, Stack, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import React from "react";
 import { CaretLeft } from "phosphor-react";
-import ResetPasswordForm from "../../sections/settings/auth/ResetPasswordForm";
+import ResetPasswordForm from "../../sections/auth/ResetPasswordForm";
 
 const ResetPassword = () => {
   return (
