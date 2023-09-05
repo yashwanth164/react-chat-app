@@ -30,7 +30,7 @@ const RegisterForm = () => {
   const defaultValues = {
     firstName: "",
     lastName: "",
-    email: "demo@tawk.com",
+    email: "demo@kukuchat.com",
     password: "demo1234",
   };
 
